@@ -595,9 +595,25 @@ func (a *Authority) DeletePermission(permName string) error {
 }
 
 func migrateTables(db *gorm.DB) {
-	db.AutoMigrate(&Role{})
-	db.AutoMigrate(&Permission{})
-	db.AutoMigrate(&RolePermission{})
-	db.AutoMigrate(&UserRoleInt{})
-	db.AutoMigrate(&UserRoleUUID{})
+	var err error
+	err = db.AutoMigrate(&Role{})
+	if err != nil {
+		panic(err)
+	}
+	err = db.AutoMigrate(&Permission{})
+	if err != nil {
+		panic(err)
+	}
+	err = db.AutoMigrate(&RolePermission{})
+	if err != nil {
+		panic(err)
+	}
+	err = db.AutoMigrate(&UserRoleInt{})
+	if err != nil {
+		panic(err)
+	}
+	err = db.AutoMigrate(&UserRoleUUID{})
+	if err != nil {
+		panic(err)
+	}
 }
