@@ -21,6 +21,7 @@ Role Based Access Control Go module with database persistence
 
 # Install
 First get `authority`
+
 ```bash
 go get github.com/Ayata-Incorporation/roles_and_permission
 ```
