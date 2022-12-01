@@ -599,4 +599,5 @@ func migrateTables(db *gorm.DB) {
 	db.AutoMigrate(&Permission{})
 	db.AutoMigrate(&RolePermission{})
 	db.AutoMigrate(&UserRoleInt{})
+	db.AutoMigrate(&UserRoleUUID{})
 }
