@@ -38,8 +38,11 @@ func New(opts Options) *Authority {
 		DB: opts.DB,
 	}
 
-	migrateTables(opts.DB)
 	return auth
+}
+
+func MigrateTables(opts Options){
+	migrateTables(opts.DB)
 }
 
 // Resolve returns the initiated instance
